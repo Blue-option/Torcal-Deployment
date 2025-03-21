@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: hf-cache-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany  # Importante para que múltiples pods puedan acceder
+  resources:
+    requests:
+      storage: 50Gi  # Tamaño del volumen, ajústalo según necesites
+  # storageClassName: standard  # Especifica tu clase de almacenamiento aquí si es necesario
